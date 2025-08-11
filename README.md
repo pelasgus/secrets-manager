@@ -323,3 +323,6 @@ If this is a string, a special bash variable $inFile can be used to reference th
 
 * Type: Null or Either Lines or `String -> Lines`
 * Default: `null`
+
+## CONTRIBUTING
+The project makes use of [lorri](https://github.com/nix-community/lorri) and [direnv](https://direnv.net/) to load/unload environment variables for testing purposes.
