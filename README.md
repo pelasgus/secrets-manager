@@ -326,3 +326,4 @@ If this is a string, a special bash variable $inFile can be used to reference th
 
 ## CONTRIBUTING
 The project makes use of [lorri](https://github.com/nix-community/lorri) and [direnv](https://direnv.net/) to load/unload environment variables for testing purposes.
+A `shell.nix` is included and the flake provides a dev shell itself, **however**, if on NixOS go through traditional configuration means to properly setup the required tooling.
