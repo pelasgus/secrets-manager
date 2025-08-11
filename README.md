@@ -14,7 +14,10 @@ For encryption/decryption usage, see `nix run .#secrix -- --help`.
 inputs.secrix.url = "github:Platonic-Systems/secrix";
 ```
 
-## Getting Started
+<details>
+  <summary><strong>
+    SETUP
+  </strong></summary>
 
 In your `flake.nix`, simply define an `app` as such:
 
@@ -37,7 +40,12 @@ secrix.defaultEncryptKeys = {
 will allow you to use `-u my-user` when encrypting a secret. Similarly, defining `secrix.hostPubKey` for some
 `nixosConfigurations` will allow you to use `-s my-host` (assuming `outputs.nixosConfigurations.my-host`).
 
-## Defining Secrets
+</details>
+
+<details>
+  <summary><strong>
+    SECRET DEFINITION
+  </strong></summary>
 
 ### Binding a Secret to a Service
 
@@ -67,7 +75,12 @@ System secrets are not bound to anything except the system's lifetime via their 
 
 `secrix.system.secrets.my-secret.decrypted.path` can be used to get its final path on the system when decrypted.
 
-## Options
+</details>
+
+<details>
+  <summary><strong>
+    OPTIONS
+  </strong></summary>
 
 ### `secrix.ageBin`
 
@@ -324,6 +337,10 @@ If this is a string, a special bash variable $inFile can be used to reference th
 * Type: Null or Either Lines or `String -> Lines`
 * Default: `null`
 
+</details>
+
 ## CONTRIBUTING
 The project makes use of [lorri](https://github.com/nix-community/lorri) and [direnv](https://direnv.net/) to load/unload environment variables for testing purposes.
-A `shell.nix` is included and the flake provides a dev shell itself, **however**, if on NixOS go through traditional configuration means to properly setup the required tooling.
+
+> [!CAUTION]
+A `shell.nix` is included and the flake provides a dev shell itself, **however**, if on NixOS go through traditional configuration means to properly setup the required tooling; this very note concerns developers wishing to contribute to this project while developing on foreign OSs.
